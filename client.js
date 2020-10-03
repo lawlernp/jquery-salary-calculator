@@ -1,47 +1,54 @@
 $(function readyNow() {
-    console.log('hi from jq');
 
-    $("#submitForm").on('click', setEmployee)
+$("#submitForm").on('click', sumbitClick)
     // submit button
+    // $('#favoriteFoods').on('click', '.deleteMe', deleteFunc);
+    //delete button
 })
 
-console.log('hi');
 
 // append to DOM
 let employeeList = [
-]
+];
+let totalAnnual = 0;
+let totalMonthly = 0;
+
 
 function setEmployee(){
+    let empFirst = $("#employeeFirst").val();
+    //     first name,
+    let empLast = $("#employeeLast").val();
+    //         last name,
+    let empNumber = $("#employeeNumber").val();
+    //             ID number,
+    let empTitle = $("#employeeTitle").val();
+    //                 job title,
+    let empSalary = $("#employeeSalary").val();
+    //                     annual salary_.}
 
-let eFirst = $("#employeeFirst").val()
-//     first name,
-let eLast = $("#employeeLast").val()
-//         last name,
-let eNumber = $("#employeeNumber").val()
-//             ID number,
-let eTitle = $("#employeeTitle").val()
-//                 job title,
-let eSalary = $("#employeeSalary").val()
-//                     annual salary_.}
 
-let employee = {
-        firstKey: eFirst,
-        lastKey: eLast,
-        idKey: eNumber,
-        titleKey: eTitle,
-        salaryKey: eSalary,
+    let employee = {
+            firstKey: empFirst,
+            lastKey: empLast,
+            idKey: empNumber,
+            titleKey: empTitle,
+            salaryKey: empSalary,
+    // declare employee as object
+    };// end setEmployee 
+
+    totalAnnual += +empSalary;
+    totalMonthly = totalAnnual / 12;
+
+
+    employeeList.push(employee)
+    // add employee to list
+
+    console.log(employee);
 }
 
-employeeList.push(employee)
-// _employee {
+function sumbitClick(){
+    setEmployee()
 
-// employee.firstKey.push(eFirst);
-// employee.lastKey.push(eLast);
-// employee.idKey.push(eNumber);
-// employee.titleKey.push(eTitle);
-// employee.salaryKey.push(eSalary)
-
-console.log(employee);
 }
 
 // delete button
