@@ -1,0 +1,15 @@
+body {
+    background-color: pink;
+}
+
+.alignRight {
+   display: flex; justify-self: end;
+}
+
+#employeeForm > div {
+    display: flex; flex-direction: row; 
+}
+
+#employeeFormContainer {
+    display: flex; flex-direction: column; 
+}
