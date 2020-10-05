@@ -12,7 +12,9 @@ let employeeList = [
 ];
 let totalAnnual = 0;
 let totalMonthly = 0;
-
+// if (totalMonthly > 20000){
+    //change class of DOM element
+}
 
 function setEmployee(){
     let empFirst = $("#employeeFirst").val();
@@ -46,8 +48,24 @@ function setEmployee(){
     console.log(employee);
 }
 
+function displayEmployee() {
+    $("#empTable").text('')
+    for (let i = 0; i < employeeList.length; i++) {
+        console.log(employeeList[i]);
+        
+        $("#empTable").append(`<tr>`)
+        $("#empTable").append(`<td>employeeList[i].firstKey</td>`)
+        $("#empTable").append(`<td>employeeList[i].lastKey</td>`)
+        $("#empTable").append(`<td>employeeList[i].idKey</td>`)
+        $("#empTable").append(`<td>employeeList[i].titleKey</td>`)
+        $("#empTable").append(`<td>employeeList[i].salaryKey</td>`)
+        $("#empTable").append(`<tr>`)
+    }
+}
+
 function sumbitClick(){
     setEmployee()
+    displayEmployee()
 
 }
 
